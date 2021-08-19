@@ -54,10 +54,11 @@
         <div class="container">
         	<div class="col-lg-10"></div>
         	<div class="col-lg-10">
-        		<div class="jumbotron" style="padding-top:50px;">
+        		<div class="container fulid">
         			<form id="login_form" onsubmit="return loginCheck();">
         				<h3 style="text-align: center;">로그인</h3>
-        				<div class="form-group">
+        				<div class = "panel-body" style="background-color: #F2F2F2;">
+        				<div class="form-group" style="margin-top: 20px">
         					<input type="text" class="form-control" placeholder="ID" name="id" maxlength="20" onkeydown="enter();">
         					<span id=Check style="color: red; font-size: 20px"><%= msgId %></span>
         				</div>
@@ -66,8 +67,9 @@
         					<input type="password" class="form-control" placeholder="PASSWORD" name="password" maxlength="20" onkeydown="enter();">
         					<span id=Check style="color: red; font-size: 20px"><%= msgPass %></span>
         				</div>
-        				<br/><br/>
-        				<input type="submit" class="btn btn-warning form-control" value="로그인">
+        				</div>
+        				<br/>
+        				<input type="submit" class="btn btn-primary form-control" value="로그인하기" style="width: 100%; padding: 5px; height: 50px; font-size: 20px; font-weight: bold;">
         			</form>
         			<br/>
         			<div style="text-align: center">

@@ -72,41 +72,64 @@
             <div class="container">
         	<div class="col-lg-10"></div>
         	<div class="col-lg-10">
-        		<div class="jumbotron" style="padding-top:50px;">
+        		<div class="container fulid">
         			<form id="login_form">
         				<h3 style="text-align: center;">회원가입</h3>
-        				<div class="form-inline form-group">
-        					<input type="text" style="width: 450px" class="form-control" placeholder="아이디를 입력하세요." name="m_id" value="" maxlength="20" onclick="openCheck();">
-        					<button type="button" class="btn btn-danger form-control" onclick="openCheck();">중복체크</button>
+        				<div class = "panel-body" style="background-color: #F2F2F2;">
+        				<div class="form-group">
+        				<label for = "m_id"> 아이디 </label>
+        				<div class = "input-group">
+        					<input type="text" class="form-control" placeholder="아이디를 입력하세요." name="m_id" value="" maxlength="20" onclick="openCheck();">
+        					<span class = "input-group-btn">
+        						<button type="button" class="btn btn-primary" onclick="openCheck();">아이디 중복체크</button>
+        					</span>
         				</div>
+        				</div>
+        				<!-- 아이디 form-group end -->
         				<br/>
         				<div class="form-group">
+        				<label for = "m_pass1"> 비밀번호 </label>
         					<input type="password" class="form-control" placeholder="비밀번호를 입력하세요." name="m_pass1" maxlength="20">
         				</div>
+        				<!-- 비밀번호 form-group end -->
         				<br/>
         				<div class="form-group">
+        				<label for = "m_pass2"> 비밀번호 확인 </label>
         					<input type="password" class="form-control" placeholder="비밀번호를 한번 더 입력하세요." name="m_pass2" maxlength="20">
         				</div>
+        				<!-- 비밀번호 확인 form-group end -->
         				<br/>
         				<div class="form-group">
+        				<label for = "m_name"> 이 름 </label>
         					<input type="text" class="form-control" placeholder="이름을 입력하세요." name="m_name">
         				</div>
+        				<!-- 이름 form-group end -->
         				<br/>
         				<div class="form-group">
-        					<input type="text" class="form-control" placeholder="이메일을 입력하세요." name="m_email">
+        				<label for = "m_email">이메일</label>
+        					<input type="text" class="form-control" placeholder="이메일을 입력하세요. ex)aaa@naver.com" name="m_email">
         				</div>
+        				<!-- 이메일 form-group end -->
         				<br/>
         				<div class="form-group">
+        				<label for = "m_birth">생년월일</label>
         					<input type="text" class="form-control" placeholder="생년월일을 입력하세요. ex)010101" name="m_birth">
         				</div>
+        				<!-- 생년월일 form-group end -->
         				<br/>
         				<div class="form-group">
+        				<label for = "m_phone">휴대폰 번호</label>
         					<input type="text" class="form-control" placeholder="휴대폰을 입력하세요. ex)01012345678" name="m_phone">
         				</div>
-        				<br/><br/>
-        				<button type="button" class="btn btn-warning form-control" onclick="signUpCheck();"><span style="font-weight: bold;">회원가입</span></button>
+        				<!-- 휴대폰 번호 form-group end -->
+        				<div class = "form-group" style="margin: 0px">
+	        				<button type="button" class="btn btn-primary" onclick="signUpCheck();" style="width: 100%; padding: 5px; height: 50px; font-size: 20px;"><span style="font-weight: bold;">회 원 가 입</span></button>	
+        				</div>
+        				</div>
+        				
         			</form>
         			<br/>
+        			
         		</div>
         	</div>
         	

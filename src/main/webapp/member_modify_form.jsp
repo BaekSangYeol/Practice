@@ -82,39 +82,47 @@
          <div class="container">
         	<div class="col-lg-10"></div>
         	<div class="col-lg-10">
-        		<div class="jumbotron" style="padding-top:50px;">
+        		<div class="container fulid">
         			<form id="modify_form">
         				<h3 style="text-align: center;">내 정보</h3>
         				<input type="hidden" class="form-control" name="m_pass1" maxlength="20" value="<%= member.getM_pass() %>">
         				<br/>
-        				<div class="form-group">
-        					아이디 <input type="text" class="form-control" name="m_id" maxlength="20" value="<%= member.getM_id() %>" readonly="readonly">
+        				<div class = "panel-body" style="background-color: #F2F2F2;">
+        				<div class = "form-group">
+        				<label for = "m_id"> 아이디 </label>
+        					<input type="text" class="form-control" name="m_id" maxlength="20" value="<%= member.getM_id() %>" readonly="readonly">
         				</div>
-        				<button type="button" class="btn btn-warning form-control" onclick="location.href='member_password_modify_form.jsp'"><span style="font-weight: bold;">비밀번호 변경하기</span></button><br/><br/>
+        				<button type="button" class="btn btn-primary form-control" onclick="location.href='member_password_modify_form.jsp'"><span style="font-weight: bold;">비밀번호 변경하기</span></button><br/><br/>
         				<br/>
         				<div class="form-group">
-        					이름 <input type="text" class="form-control" name="m_name" value="<%= member.getM_name() %>">
-        				</div>
-        				<br/>
-        				<div class="form-group">
-        					이메일 <input type="text" class="form-control" name="m_email" value="<%= member.getM_email() %>">
-        				</div>
-        				<br/>
-        				<div class="form-group">
-        					생년월일 <input type="text" class="form-control" name="m_birth" value="<%= member.getM_birth() %>">
+        				<label for = "m_name"> 이름 </label>
+        					<input type="text" class="form-control" name="m_name" value="<%= member.getM_name() %>">
         				</div>
         				<br/>
         				<div class="form-group">
-        					폰번호 <input type="text" class="form-control" name="m_phone" value="<%= member.getM_phone() %>">
+        				<label for = "m_email"> 이메일 </label>
+        					<input type="text" class="form-control" name="m_email" value="<%= member.getM_email() %>">
+        				</div>
+        				<br/>
+        				<div class="form-group">
+        				<label for = "m_birth"> 생년월일 </label>
+        					<input type="text" class="form-control" name="m_birth" value="<%= member.getM_birth() %>">
+        				</div>
+        				<br/>
+        				<div class="form-group">
+        				<label for = "m_phone"> 휴대폰 번호</label>
+        					<input type="text" class="form-control" name="m_phone" value="<%= member.getM_phone() %>">
         				</div>
         				<br/>
         				<div class="form-group">
         					비밀번호 확인(수정을 위해서 비밀번호를 입력하세요.)
         					<input type="password" class="form-control" name="m_pass" value="">
         				</div>
-        				<br/><br/>
-        				<button type="button" class="btn btn-warning form-control" onclick="modifyCheck();"><span style="font-weight: bold;">수정하기</span></button><br/><br/>
-        				<button type="button" class="btn btn-warning form-control" onclick="location.href='index.jsp'"><span style="font-weight: bold;">취소하기</span></button>
+        				<div class = "form-group text-center">
+        				<button type="button" class="btn btn-primary" onclick="modifyCheck();" style="width: 100%"><span style="font-weight: bold;">수정하기</span></button><br/><br/>
+        				<button type="button" class="btn btn-primary" onclick="location.href='index.jsp'" style="width: 100%"><span style="font-weight: bold;">취소하기</span></button>
+        				</div>
+        				</div>
         			</form>
         			<br/>
         		</div>

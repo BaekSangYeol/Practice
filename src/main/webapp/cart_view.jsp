@@ -52,6 +52,35 @@
 				form.submit();
 			}
 		}
+		
+		function selectAll() {
+			var check = document.getElementsByName("check");
+			//getElementsByName을 통해 변수를 저장할 경우 배열로 담긴다.
+				if(document.getElementById("allCheck").checked == false) {
+					for(var i = 0; i < check.length; i++){
+						check[i].checked = false;
+						//check가 배열로 초기화되었기 때문에 length를 가질수 있고, 인덱스가 부여된다.
+					}
+				} else{
+					for(var i = 0; i <check.length; i++){
+						check[i].checked = true;
+					}
+				}
+				
+		}
+		
+ 		function itemSum() {
+			var sum = 0;
+			var priceCheck = document.getElementsByName("priceCheck");
+			var count = document.getElementsByName("priceCheck").length;
+			for(var i = 0; i < count; i++){
+				if(priceCheck[i].checked == true){
+					sum += parseInt(priceCheck[i].value);
+				}
+			}
+			document.getElementById("total_sum").value = sum;
+			
+		} 
 	</script>
     </head>
     <body>
@@ -67,12 +96,15 @@
 					<h3 style="text-align: center;">내 장바구니</h3>
 					<table class = "table table-bordered">
 						<tr class = "warning">
-							<th style="text-align: center;">선 택</th>
-							<th style="text-align: center;">이미지</th>
-							<th style="text-align: center;">상품명</th>
-							<th style="text-align: center;">수 량</th>
-							<th style="text-align: center;">합 계</th>
-							<th style="text-align: center;">삭 제</th>
+							<th style="text-align: center; vertical-align: middle;">선 택(값)<br/></th>
+							<th style="text-align: center; vertical-align: middle;">선 택<br/>
+								<input type="checkbox" id = "allCheck" name = "allCheck" onclick="selectAll();">
+							</th>
+							<th style="text-align: center; vertical-align: middle;">이미지</th>
+							<th style="text-align: center; vertical-align: middle;">상품명</th>
+							<th style="text-align: center; vertical-align: middle;">수 량</th>
+							<th style="text-align: center; vertical-align: middle;">합 계</th>
+							<th style="text-align: center; vertical-align: middle;">삭 제</th>
 						</tr>
 						<%
 							int totPrice = 0;
@@ -80,6 +112,7 @@
 							totPrice += cart.getProduct().getP_price() * cart.getC_qty();
 						%>
 						<tr height="100px" style="text-align: center;" class = "active">
+							<th style="text-align: center; vertical-align: middle;"><input type = "checkbox" name = "priceCheck" value = "<%= cart.getProduct().getP_price() * cart.getC_qty() %>" onclick="itemSum();"></th>
 							<th style="text-align: center; vertical-align: middle;"><input type = "checkbox" name = "check" value = "<%= cart.getC_no() %>" checked="checked"></th>
 							<th style="text-align: center; vertical-align: middle;"><img src = "<%= cart.getProduct().getP_image_path() %>" width="150" height="80"></th>
 							<th style="text-align: center; vertical-align: middle;"><a href = "p_detail.jsp?p_no=<%= cart.getProduct().getP_no() %>"><%= cart.getProduct().getP_name() %></a></th>
@@ -97,7 +130,8 @@
 						%>
 					</table>
 					
-					<div align="right">총 주문 금액 : <mark style="color: black; font-weight: bold;"><%= new DecimalFormat("#,##0").format(totPrice) %>원</mark></div>
+					<div align="right">장바구니 상품 총 합계 : <mark style="color: black; font-weight: bold;"><%= new DecimalFormat("#,##0").format(totPrice) %>원</mark></div>
+					<div align="right">선택한 상품 합계 : <input type = "text" id = "total_sum" name = "total_sum" readonly="readonly" value = ""></div>
 					<div align="right">
 						<form id = "cart_delete_form">
 						<button type="button" class = "btn btn-primary btn-xs" onclick="cart_select_delete_item();">선택상품삭제</button>

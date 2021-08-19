@@ -1,6 +1,7 @@
 package practice.cart.test;
 
 import practice.cart.CartDao;
+import practice.cart.CartService;
 /*
 	//회원 1명 장바구니 추가
 	public static final String INSERT_CART = "insert into cart(c_no, c_qty, p_no, m_id) values(cart_c_no_seq.nextval, ?, ?, ?)";
@@ -28,6 +29,7 @@ public class CartDaoTest {
 	public static void main(String[] args) throws Exception{
 		
 		CartDao cartDao = new CartDao();
+		CartService cartService = new CartService();
 		
 		/*
 		 * System.out.println(cartDao.insertCart(2, 3, "bbb"));
@@ -39,6 +41,8 @@ public class CartDaoTest {
 		System.out.println(cartDao.updateQty(4, 3, "bbb"));
 		System.out.println(cartDao.productCount("aaa"));
 		System.out.println(cartDao.isExistProduct("aaa", 7));
+		
+		System.out.println(cartService.insertCart(2, 7, "aaa"));
 		
 	}
 

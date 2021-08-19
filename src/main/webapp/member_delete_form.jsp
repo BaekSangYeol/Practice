@@ -46,18 +46,21 @@
 		        <div class="container">
         	<div class="col-lg-10"></div>
         	<div class="col-lg-10">
-        		<div class="jumbotron" style="padding-top:50px;">
+        		<div class="container fulid">
         			<form id="delete_form">
         				<h3 style="text-align: center;">회원탈퇴하기</h3>
         				<input type="hidden" class="form-control" name="password1" maxlength="20" value="<%= member.getM_pass() %>">
         				<input type="hidden" class="form-control" name="m_id" value="<%= member.getM_id() %>">
+        				<div class = "panel-body" style="background-color: #F2F2F2">
         				<div class="form-group">
         					<span style="font-size: 20px">현재 비밀번호</span>
         					<input type="password" class="form-control" placeholder="PASSWORD" name="password2" maxlength="20">
-        					
+        				</div>
+        				<div class = "form-group">
+        				<button type="button" class="btn btn-primary form-control" onclick="deleteCheck();"><span style="font-weight: bold;">회원 탈퇴하기</span></button>
+        				</div>
         				</div>
         				<br/><br/>
-        				<button type="button" class="btn btn-warning form-control" onclick="deleteCheck();"><span style="font-weight: bold;">회원 탈퇴하기</span></button>
         			</form>
         			<br/>
         		</div>

@@ -21,7 +21,10 @@
 	MemberService memberService = new MemberService();
 	
 	memberService.deleteMember(sUserId);
-	response.sendRedirect("member_logout_action.jsp");
+	out.println("<script>");
+	out.println("alert('회원탈퇴 되었습니다. 메인으로 돌아갑니다.')");
+	out.println("location.href='member_logout_action.jsp'");
+	out.println("</script>");
 	
 	} catch(Exception e) {
 		e.printStackTrace();

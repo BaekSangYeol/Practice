@@ -43,34 +43,44 @@
          <div class="container">
         	<div class="col-lg-10"></div>
         	<div class="col-lg-10">
-        		<div class="jumbotron" style="padding-top:50px;">
+        		<div class="container fulid">
         			<form id="modify_form">
         				<h3 style="text-align: center;">내 정보</h3>
         				<input type="hidden" class="form-control" name="m_pass1" maxlength="20" value="<%= member.getM_pass() %>">
         				<br/>
-        				<div class="form-group">
-        					아이디 <input type="text" class="form-control" name="m_id" maxlength="20" value="<%= member.getM_id() %>" readonly="readonly">
+        				<div class = "panel-body" style="background-color: #F2F2F2">
+        				<div class = "form-group">
+        				<label for = "m_id"> 아이디 </label>
+        					<input type="text" class="form-control" name="m_id" maxlength="20" value="<%= member.getM_id() %>" readonly="readonly">
         				</div>
         				<br/>
         				<div class="form-group">
-        					이름 <input type="text" class="form-control" name="m_name" value="<%= member.getM_name() %>" readonly="readonly">
+        				<label for = "m_name"> 이름 </label>
+        					<input type="text" class="form-control" name="m_name" value="<%= member.getM_name() %>" readonly="readonly">
         				</div>
         				<br/>
         				<div class="form-group">
-        					이메일 <input type="text" class="form-control" name="m_email" value="<%= member.getM_email() %>" readonly="readonly">
+        				<label for = "m_email"> 이메일 </label>
+        					<input type="text" class="form-control" name="m_email" value="<%= member.getM_email() %>" readonly="readonly">
         				</div>
         				<br/>
         				<div class="form-group">
-        					생년월일 <input type="text" class="form-control" name="m_birth" value="<%= member.getM_birth() %>" readonly="readonly">
+        				<label for = "m_birth"> 생년월일 </label>
+        					<input type="text" class="form-control" name="m_birth" value="<%= member.getM_birth() %>" readonly="readonly">
         				</div>
         				<br/>
         				<div class="form-group">
-        					폰번호 <input type="text" class="form-control" name="m_phone" value="<%= member.getM_phone() %>" readonly="readonly">
+        				<label for = "m_phone"> 폰번호 </label>
+        					<input type="text" class="form-control" name="m_phone" value="<%= member.getM_phone() %>" readonly="readonly">
+        				</div>
+        				<div class="form-group text-center" style="margin: 0px;">
+        				<button type="button" class="btn btn-primary col-lg-3" onclick="location.href='member_modify_form.jsp'"><span style="font-weight: bold;">내정보 수정하기</span></button>
+        				<button type="button" class="btn btn-primary col-lg-3" onclick="location.href='index.jsp'"><span style="font-weight: bold;">메인으로 돌아가기</span></button>
+        				<button type="button" class="btn btn-primary col-lg-3" onclick="location.href='member_delete_form.jsp'"><span style="font-weight: bold;">회원 탈퇴하기</span></button>
+        				</div>
         				</div>
         				<br/>
-        				<button type="button" class="btn btn-warning col-lg-3" onclick="location.href='member_modify_form.jsp'"><span style="font-weight: bold;">내정보 수정하기</span></button>
-        				<button type="button" class="btn btn-warning col-lg-3" onclick="location.href='index.jsp'"><span style="font-weight: bold;">메인으로 돌아가기</span></button>
-        				<button type="button" class="btn btn-warning col-lg-3" onclick="location.href='member_delete_form.jsp'"><span style="font-weight: bold;">회원 탈퇴하기</span></button>
+        				
         			</form>
         			<br/>
         		</div>
