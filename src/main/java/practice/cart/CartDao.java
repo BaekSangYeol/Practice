@@ -29,10 +29,9 @@ public class CartDao {
 	}
 	
 
-	
+	//회원 1명 장바구니 추가
+	//public static final String INSERT_CART = "insert into cart(c_no, c_qty, p_no, m_id) values(cart_c_no_seq.nextval, ?, ?, ?)";
 	public int insertCart(int c_qty, int p_no, String m_id) throws Exception {
-		//회원 1명 장바구니 추가
-		//public static final String INSERT_CART = "insert into cart(c_no, c_qty, p_no, m_id) values(cart_c_no_seq.nextval, ?, ?, ?)";
 		int insertRowCount = 0;
 		Connection con = null;
 		PreparedStatement pstmt = null;
