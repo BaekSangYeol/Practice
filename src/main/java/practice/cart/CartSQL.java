@@ -20,7 +20,7 @@ public class CartSQL {
 	//회원 1명 장바구니 상품 갯수
 	public static final String SELECT_COUNT = "select count(*) p_cnt from cart where m_id = ?";
 	
-	//회원 1명에 상품 1개 장바구니 갯수
+	//회원 1명에 상품 1개 존재여부(1 = 존재, 0 = 없음)
 	public static final String SELECT_COUNT_MEMBER = "select count(*) p_cnt from cart c join member m on c.m_id=m.m_id where m.m_id=? and c.p_no=?";
 
 }
