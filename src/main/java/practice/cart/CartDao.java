@@ -147,7 +147,7 @@ public class CartDao {
 	
 	//장바구니 물품 1개 삭제(FK(p_no),FK(m_id) 받아서 삭제)
 	//public static final String DELETE_NO = "delete cart where p_no = ? and m_id = ?";
-	public int deleteByPno(int p_no, String m_id) throws Exception{
+	public int deleteByPno(int c_no, String m_id) throws Exception{
 		int deleteRowCount = 0;
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -156,7 +156,7 @@ public class CartDao {
 			
 			con = dataSource.getConnection();
 			pstmt = con.prepareStatement(CartSQL.DELETE_NO);
-			pstmt.setInt(1, p_no);
+			pstmt.setInt(1, c_no);
 			pstmt.setString(2, m_id);
 			deleteRowCount = pstmt.executeUpdate();
 			

@@ -61,12 +61,12 @@
 						check[i].checked = false;
 						//check가 배열로 초기화되었기 때문에 length를 가질수 있고, 인덱스가 부여된다.
 					}
-				} else{
+				} else {
 					for(var i = 0; i <check.length; i++){
 						check[i].checked = true;
 					}
 				}
-				
+			
 		}
 		
  		function itemSum() {
@@ -81,6 +81,16 @@
 			document.getElementById("total_sum").value = sum;
 			
 		} 
+ 		
+ 		function checkSelectAll() {
+			var selectCheck = document.getElementsByName("check");
+			var allCheck = document.getElementById("allCheck");
+			if(selectCheck.length == allCheck.length){
+				allCheck.checked = true;
+			} else{
+				allCheck.checked = false;
+			}
+		}
 	</script>
     </head>
     <body>
@@ -113,7 +123,7 @@
 						%>
 						<tr height="100px" style="text-align: center;" class = "active">
 							<th style="text-align: center; vertical-align: middle;"><input type = "checkbox" name = "priceCheck" value = "<%= cart.getProduct().getP_price() * cart.getC_qty() %>" onclick="itemSum();"></th>
-							<th style="text-align: center; vertical-align: middle;"><input type = "checkbox" name = "check" value = "<%= cart.getC_no() %>" checked="checked"></th>
+							<th style="text-align: center; vertical-align: middle;"><input type = "checkbox" name = "check" value = "<%= cart.getC_no() %>" checked="checked" onclick="checkSelectAll();"></th>
 							<th style="text-align: center; vertical-align: middle;"><img src = "<%= cart.getProduct().getP_image_path() %>" width="150" height="80"></th>
 							<th style="text-align: center; vertical-align: middle;"><a href = "p_detail.jsp?p_no=<%= cart.getProduct().getP_no() %>"><%= cart.getProduct().getP_name() %></a></th>
 							<th style="text-align: center; vertical-align: middle;"><%= cart.getC_qty() %></th>
@@ -138,7 +148,10 @@
 						<button type="button" class = "btn btn-primary btn-xs" onclick="cart_deleteAll();">장바구니 비우기</button>
 						</form>
 					</div>
-					<div align="center"><button type="button" class = "btn btn-primary" onclick = "rez_create_form();">선택한 상품 예약</button></div>
+					<div align="center">
+					<button type="button" class = "btn btn-primary" onclick = "location.href='p_list.jsp'">쇼핑 계속하기</button>
+					<button type="button" class = "btn btn-primary" onclick = "rez_create_form();">선택한 상품 예약</button>
+					</div>
 				</div>
 			</div>
 		</div>

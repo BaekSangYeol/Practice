@@ -7,23 +7,26 @@ RI_QTY          NUMBER(20)
 R_NO            NUMBER(10) 
 P_NO            NUMBER(10) 
  */
+
+import practice.product.Product;
+
 public class ReservationItem {
 	
 	private int ri_no;
 	private int ri_qty;
 	private int r_no;
-	private int p_no;
+	private Product product;
 	
 	public ReservationItem() {
 		
 	}
 
-	public ReservationItem(int ri_no, int ri_qty, int r_no, int p_no) {
+	public ReservationItem(int ri_no, int ri_qty, int r_no, Product product) {
 		super();
 		this.ri_no = ri_no;
 		this.ri_qty = ri_qty;
 		this.r_no = r_no;
-		this.p_no = p_no;
+		this.product = product;
 	}
 
 	public int getRi_no() {
@@ -50,18 +53,22 @@ public class ReservationItem {
 		this.r_no = r_no;
 	}
 
-	public int getP_no() {
-		return p_no;
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setP_no(int p_no) {
-		this.p_no = p_no;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
 	@Override
 	public String toString() {
-		return "ReservationItem [ri_no=" + ri_no + ", ri_qty=" + ri_qty + ", r_no=" + r_no + ", p_no=" + p_no + "]";
+		return "ReservationItem [ri_no=" + ri_no + ", ri_qty=" + ri_qty + ", r_no=" + r_no + ", product=" + product
+				+ "]";
 	}
+	
+	
+	
 	
 	
 

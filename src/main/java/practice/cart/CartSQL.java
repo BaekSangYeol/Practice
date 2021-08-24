@@ -11,8 +11,8 @@ public class CartSQL {
 	//장바구니 전체 삭제(FK(m_id) 받아서 삭제)
 	public static final String DELETE_ALL = "delete cart where m_id = ?";
 	
-	//장바구니 물품 1개 삭제(FK(p_no),FK(m_id) 받아서 삭제)
-	public static final String DELETE_NO = "delete cart where p_no = ? and m_id = ?";
+	//장바구니 물품 1개 삭제(c_no,FK(m_id) 받아서 삭제)
+	public static final String DELETE_NO = "delete cart where c_no = ? and m_id = ?";
 	
 	//장바구니 수량 변경
 	public static final String UPDATE_QTY = "update cart set c_qty = c_qty + ? where p_no = ? and m_id = ?";

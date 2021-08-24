@@ -36,9 +36,9 @@ public class CartService {
 	}
 	
 	//장바구니 물품 1개 삭제(FK(p_no),FK(m_id) 받아서 삭제)
-	//public static final String DELETE_NO = "delete cart where p_no = ? and m_id = ?";
-	public int deleteByPno(int p_no, String m_id) throws Exception {
-		return cartDao.deleteByPno(p_no, m_id);
+	//public static final String DELETE_NO = "delete cart where c_no = ? and m_id = ?";
+	public int deleteByPno(int c_no, String m_id) throws Exception {
+		return cartDao.deleteByPno(c_no, m_id);
 	}
 	
 	//회원 1명 장바구니 상품 갯수
