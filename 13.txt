@@ -1,0 +1,14 @@
+오늘 해볼거
+
+source tree or github 연동해서 차차 작업해나가기(나만의 프로젝트)
+1.오늘은 나만의 erd생성(기본적으로 회원/후기게시판/자주찾는 질문 정도만)
+2.ddl create
+3.insert delete update select(join이용) sql파일 만들기
+-------------------------------------------------------
+4.sql참고 DTO , DAO, DAOTest, DAOService 코딩
+5.jsp코딩
+  - 회원가입
+  - 로그인(session)
+  - 관리자로그인 시 보여지는 메뉴(이것도 session으로 한번?)
+  - 게시판 작성
+  - 자주찾는질문(관리자 아이디로만) 작성
